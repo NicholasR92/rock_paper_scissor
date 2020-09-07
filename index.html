@@ -6,15 +6,38 @@
 <body>
 <script type="text/javascript">
 
+
 function computerPlay(){
 	let choices = ["rock", "paper", "scissors"];
 
 	let cpuChoice = choices[Math.floor(Math.random() * choices.length)];
 
-	console.log(cpuChoice);
+	return cpuChoice;
 }
 
+function playRound(playerSelection, computerSelection){
 
+
+	if (playerSelection == computerSelection){
+		return "It's a tie! " + playerSelection + " and " + computerSelection + " are the same!"
+	}
+
+	else if (playerSelection == 'rock' && computerSelection == 'scissors' || 
+			playerSelection == 'scissors' && computerSelection == 'paper' || 
+			playerSelection == 'paper' && computerSelection == 'rock'){
+		return playerSelection + ' beats ' + computerSelection + '. Player Wins!'
+	}
+	
+	else {
+		return "computer wins! " + computerSelection + " beats " + playerSelection
+	}
+}   
+
+
+
+const playerSelection = prompt('Player Selects').toLowerCase()
+const computerSelection = computerPlay()
+console.log(playRound(playerSelection, computerSelection))
 
 
 </script>
