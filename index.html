@@ -5,7 +5,10 @@
 </head>
 <body>
 <script type="text/javascript">
-
+//global variables
+let playerScore = 0
+let computerScore = 0
+let round = 1
 
 //decides what choice computer chooses
 function computerPlay(){
@@ -17,9 +20,6 @@ function computerPlay(){
 }
 
 //decides who wins
-let playerScore = 0
-let computerScore = 0
-let round = 1
 function selections(playerSelection, computerSelection){
 
 	
@@ -58,8 +58,6 @@ let playerSelection = prompt("Round " + round + " Player: " + playerScore + " Co
 let computerSelection = computerPlay()
 selections(playerSelection, computerSelection)
 
-//console.log("Player: " + playerScore)
-//console.log("Computer: " + computerScore)
 }
 
 //runs a full game which would be 5 rounds
@@ -73,10 +71,11 @@ function game(){
 	playRound()
 	playRound()
 
+//announces the winner via alert
 	if(playerScore == computerScore){
 		alert("The game ended in a tie....BORING!")
 	} else if(playerScore > computerScore){
-		alert("Player Wins the Game!")
+		alert("Player Wins the Game!" )
 	} else{
 		alert("You suck. Computer Wins the Game.")
 	};
