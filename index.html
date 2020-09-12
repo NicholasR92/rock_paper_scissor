@@ -15,53 +15,80 @@ function computerPlay(){
 
 	return cpuChoice;
 }
-	
 
 //decides who wins
-
+let playerScore = 0
+let computerScore = 0
+let round = 1
 function selections(playerSelection, computerSelection){
+
 	
 
 	if (playerSelection == computerSelection){
-		console.log("It's a tie! " + playerSelection + " and " + computerSelection + " are the same!")
+		alert("It's a tie! " + playerSelection + " and "   + computerSelection + " are the same!");
+			return round +=1;
 	}
 
 	else if (playerSelection == 'rock' && computerSelection == 'scissors' || 
 			playerSelection == 'scissors' && computerSelection == 'paper' || 
 			playerSelection == 'paper' && computerSelection == 'rock'){
-		console.log(playerSelection + ' beats ' + computerSelection + '. Player Wins!')
+		
+		alert('Player Wins! ' + playerSelection + ' beats ' + computerSelection);
+		return playerScore += 1, round +=1;
+		
 	}
 	
 	else {
-		console.log("computer wins! " + computerSelection + " beats " + playerSelection)
-
+		
+		alert('computer wins! ' + computerSelection + ' beats ' + playerSelection);
+		return computerScore +=1, round +=1;
 
 	}
 	
 	
 }  
+
+
+
 //runs a round of the game
 
 function playRound(){
-let playerSelection = prompt()
+
+let playerSelection = prompt("Round " + round + " Player: " + playerScore + " Computer: " + computerScore)
 let computerSelection = computerPlay()
 selections(playerSelection, computerSelection)
+
+//console.log("Player: " + playerScore)
+//console.log("Computer: " + computerScore)
 }
 
 //runs a full game which would be 5 rounds
 
 function game(){
+	
+
 	playRound()
 	playRound()
 	playRound()
 	playRound()
 	playRound()
+
+	if(playerScore == computerScore){
+		alert("The game ended in a tie....BORING!")
+	} else if(playerScore > computerScore){
+		alert("Player Wins the Game!")
+	} else{
+		alert("You suck. Computer Wins the Game.")
+	};
+
 }
 
 
 
 game()
 
+//console.log("Player: " + playerScore)
+//console.log("Computer: " + computerScore)
 
 
 
