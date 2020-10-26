@@ -1,0 +1,47 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url(rpsBg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.scoreboard{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	font-family: DejaVu Sans Mono, monospace;
+	color: white;
+	border: 13px solid white;
+	border-radius: 2px;
+	opacity: 95%;
+	width: auto;
+	height: 350px;
+
+	background-color: black;
+
+}
+
+.mainTitle{
+	
+	text-align: center;	
+	border: 1px solid red;
+	font-family: DejaVu Sans Mono, monospace;
+	font-size: 1rem;
+	color: white;
+	text-shadow: 2px 2px 3px green;
+}
+
+
+
+.buttons{
+	display: flex;
+
+	border: 1px solid white;
+
+	width: 200px;
+}
